@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://bw2jvupxpcd3x"]
+
+[ext_resource type="Texture2D" uid="uid://b1j23x0qaland" path="res://icon.svg" id="1_2x20n"]
+[ext_resource type="FontFile" uid="uid://heev7u7uckqh" path="res://Inter-Regular.ttf" id="2_yyff0"]
+[ext_resource type="PackedScene" uid="uid://b7cwbjy5pndgw" path="res://subscene/subscene.tscn" id="4_61ayc"]
+[ext_resource type="Script" path="res://addons/SliderLabel/SliderLabel.gd" id="4_ddh4y"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_2x20n")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_yyff0")
+theme_override_font_sizes/font_size = 27
+text = "ExampleLabel"
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.256
+offset_right = 4.08798
+offset_bottom = 16.0
+
+[node name="SliderLabel" type="Label" parent="HSlider"]
+layout_mode = 0
+offset_right = 28.0
+offset_bottom = 23.0
+size_flags_horizontal = 4
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_ddh4y")
+metadata/_edit_initialized_ = true
+
+[node name="Subscene" parent="." instance=ExtResource("4_61ayc")]
+layout_mode = 1
